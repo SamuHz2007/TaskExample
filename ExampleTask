@@ -1,0 +1,32 @@
+package AiVillagers.Tasks;
+
+import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.ai.brain.MemoryModuleState;
+import net.minecraft.entity.ai.brain.MemoryModuleType;
+import net.minecraft.entity.ai.brain.task.MultiTickTask;
+import net.minecraft.entity.passive.VillagerEntity;
+import net.minecraft.server.world.ServerWorld;
+
+import static AiVillagers.ExampleMod.LOGGER;
+
+public class ExampleTask extends MultiTickTask<VillagerEntity> {
+
+    public ExampleTask() {
+        super(ImmutableMap.of(MemoryModuleType.JOB_SITE, MemoryModuleState.VALUE_PRESENT, MemoryModuleType.LOOK_TARGET, MemoryModuleState.REGISTERED));
+        LOGGER.info("[CallVillagersTask] Constructor llamado. Tarea registrada.");
+    }
+
+    @Override
+    protected boolean shouldRun(ServerWorld serverWorld, VillagerEntity villagerEntity) {
+        return false;
+    }
+
+    @Override
+    protected void run(ServerWorld serverWorld, VillagerEntity villagerEntity, long time) {
+    }
+
+    @Override
+    protected boolean shouldKeepRunning(ServerWorld serverWorld, VillagerEntity villager, long time) {
+        return false;
+    }
+}
