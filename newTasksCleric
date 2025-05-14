@@ -1,6 +1,6 @@
 package AiVillagers.mixin.Cleric;
 
-import AiVillagers.Tasks.massExecutionTask;
+import AiVillagers.Tasks.ExampleTask;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.entity.passive.VillagerEntity;
@@ -28,7 +28,7 @@ public class newTasksCleric {
         if (professionEntry.matchesKey(VillagerProfession.CLERIC)) {
             brain.setTaskList(
                     Activity.WORK,
-                    ImmutableList.of(Pair.of(1, new massExecutionTask()))
+                    ImmutableList.of(Pair.of(1, new ExampleTask()))
             );
         }
     }
